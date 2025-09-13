@@ -11,8 +11,35 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>3kh0 lite</title>
+    <style>
+      /* Styles for the Retro Bowl credit modifier section */
+      .retrobowl-container {
+        margin-top: 50px;
+        padding: 20px;
+        background-color: #222;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        max-width: 600px;
+        color: #fff;
+      }
+      .retrobowl-container h2 {
+        font-size: 2em;
+        color: #22c55e;
+      }
+      .retrobowl-container button {
+        cursor: pointer;
+        background-color: #22c55e;
+        border: none;
+        color: white;
+        padding: 10px 20px;
+        font-size: 16px;
+        border-radius: 5px;
+        margin-top: 10px;
+      }
+    </style>
   </head>
   <body style="background-color: #121212; color: #ffffff; font-family: sans-serif; margin: 0; padding: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh;">
+    
     <h1 style="font-size: 3em; text-align: center;">
       3kh0 lite
     </h1>
@@ -23,11 +50,49 @@
       <br />
       <a href="/misc.html" style="text-decoration: none;"><button style="cursor: pointer; background-color: #b625cc; border: none; color: white; padding: 15px 32px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; border-radius: 20px; margin-top: 5px;">Tools and settings</button></a>
     </p>
+
+    <div class="retrobowl-container">
+        <h2>Retro Bowl Credit Modifier</h2>
+        <p>This tool allows you to set your Retro Bowl credits to a high number. Please follow these steps:</p>
+        <ol style="text-align: left;">
+          <li>Open Retro Bowl in your browser and have a game save.</li>
+          <li>Click the button below.</li>
+          <li>Enter your **exact** current number of credits.</li>
+          <li>The page will reload with your new credit amount.</li>
+        </ol>
+        <button id="run-script-button">Run Credit Modifier Script</button>
+    </div>
+
     <p style="text-align: center; max-width: 600px; margin: 20px auto;">
         &copy; 3kh0, 2024. All rights reserved. You are welcome to use and/or duplicate material from the <a href="https://github.com/3kh0/3kh0-lite" style="color: #22c55e;">GitHub repository</a> with proper credit to 3kh0.<br /><br />
         Contact Echo at <a href="mailto:echo-the-coder@tuta.io" style="color: #22c55e;">echo-the-coder@tuta.io</a>.
     </p>
+
     <script src="/js/main.js"></script>
     <script src="/js/subtitle.js"></script>
+    <script>
+      // The JavaScript code for the credit modifier
+      document.getElementById('run-script-button').addEventListener('click', () => {
+        if (localStorage.getItem("RetroBowl.0.savedata.ini")) {
+          let z = prompt("how many credits do you have right now (please input correct number)");
+          if (z !== null && z.trim() !== "") {
+            let savedData = localStorage.getItem("RetroBowl.0.savedata.ini");
+            let newSavedData = savedData.replace(`coach_credit="${z}"`, 'coach_credit="999999999999"');
+            
+            if (savedData !== newSavedData) {
+              localStorage.setItem("RetroBowl.0.savedata.ini", newSavedData);
+              alert("Credits have been successfully updated! The page will now reload.");
+              window.location.reload();
+            } else {
+              alert("Error: The current credit amount was not found in the save data. Please make sure the number you entered is correct and try again.");
+            }
+          } else {
+            alert("Operation canceled.");
+          }
+        } else {
+          alert("You must open up a new game save first!");
+        }
+      });
+    </script>
   </body>
 </html>
