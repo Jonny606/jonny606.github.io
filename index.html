@@ -101,7 +101,7 @@ h2 {
           let z = prompt("how many credits do you have right now (please input correct number)");
           if (z !== null && z.trim() !== "") {
             let savedData = localStorage.getItem("RetroBowl.0.savedata.ini");
-            let newSavedData = savedData.replace(`coach_credit="${z}"`, 'coach_credit="999999999999"');
+            let newSavedData = savedData.replace(`coach_credit="${z}"`, 'coach_credit="99999999999999999"');
             
             if (savedData !== newSavedData) {
               localStorage.setItem("RetroBowl.0.savedata.ini", newSavedData);
