@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta name="google-adsense-account" content="ca-pub-7180291357336445">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <meta name="keywords" content="front-end web developer, unblocked, games, google sites, unblocked games mom, unblocked, code, coding, programmer, development, javascript, jquery, bootstrap, sass, lite, fast, game site, 3kh0">
+    <meta property="og:title" content="Welcome to 3kh0 lite, a lightweight, fast, and clean game site." />
+    <meta property="og:site_name" content="3kh0.github.io" />
+    <meta property="og:description" content="Welcome to 3kh0 lite, a lightweight, fast, and clean game site." />
+    <meta name="description" content="Welcome to 3kh0 lite, a lightweight, fast, and clean game site." />
+    <meta name="author" content="3kh0" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Nin</title>
+    <style>
+      body {
+        background-color: #121212;
+        color: #ffffff;
+        font-family: sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+      }
+      h1 {
+        text-align: right;
+      }
+      h2 {
+        text-align: center;
+      }
+      .main-btn {
+        cursor: pointer;
+        background-color: #22c55e;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 1em;
+        border-radius: 5px;
+        margin-top: 10px;
+      }
+      .main-btn.secondary {
+        background-color: #b625cc;
+      }
+      .retrobowl-container {
+        margin-top: 50px;
+        padding: 20px;
+        background-color: #222;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        max-width: 600px;
+        color: #fff;
+      }
+      .retrobowl-container h2 {
+        font-size: 2em;
+        color: #22c55e;
+      }
+      .retrobowl-container p,
+      .retrobowl-container ol {
+        font-size: 0.9rem;
+      }
+      .retrobowl-container button {
+        padding: 10px 20px;
+        font-size: 16px;
+        border-radius: 5px;
+        margin-top: 10px;
+        background-color: #22c55e;
+        border: none;
+        color: white;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <span id="subtitle" style="font-size: 1.5em;">...</span>
+    <p style="text-align: center; max-width: 600px; margin: 20px auto;">
+      Welcome to Nin a lightweight, lightning fast, and simple game site.<br />
+      <a href="/projects.html" style="text-decoration: none;">
+        <button class="main-btn" aria-label="Go to Projects page">Projects</button>
+      </a>
+      <br />
+      <a href="/misc.html" style="text-decoration: none;">
+        <button class="main-btn secondary" aria-label="Go to Miscellaneous page">Misc</button>
+      </a>
+    </p>
+    <h3>Njiru IS THE GOAT TONY is the GOAT AND YOSYAS IS THE GOAT ELI IS THE GOAT Robbert is the GOAT AYOUB is the Goat Mohhamed is the GOAT CARTER is the Goat OWEN is the Goat</h3>
+    <h2>Go to nin107.global.ssl.fastly.net for all the newest websites (Requested by the goat Njiru)</h2>
+    <div class="retrobowl-container">
+      <h2>Retro Bowl Credit Modifier</h2>
+      <p>This tool allows you to set your Retro Bowl credits to a high number. Please follow these steps:</p>
+      <ol style="text-align: left;">
+        <li>Open Retro Bowl in your browser and have a game save.</li>
+        <li>Click the button below.</li>
+        <li>Enter your <strong>exact</strong> current number of credits.</li>
+        <li>The page will reload with your new credit amount.</li>
+      </ol>
+      <button id="run-script-button" aria-label="Run the Retro Bowl Credit Modifier script">Run Credit Modifier Script</button>
+    </div>
+    <script src="/js/main.js"></script>
+    <script src="/js/subtitle.js"></script>
+    <script>
+      // The JavaScript code for the credit modifier using regex
+      document.getElementById('run-script-button').addEventListener('click', () => {
+        if (localStorage.getItem("RetroBowl.0.savedata.ini")) {
+          let z = prompt("How many credits do you have right now (please input correct number)");
+          if (z !== null && z.trim() !== "") {
+            let savedData = localStorage.getItem("RetroBowl.0.savedata.ini");
+            // Regex will match and update any coach_credit value
+            let newSavedData = savedData.replace(/coach_credit="\d+"/, 'coach_credit="99999999999999999"');
+            if (savedData !== newSavedData) {
+              localStorage.setItem("RetroBowl.0.savedata.ini", newSavedData);
+              alert("Credits have been successfully updated! The page will now reload.");
+              window.location.reload();
+            } else {
+              alert("Error: The current credit amount was not found in the save data. Please make sure the number you entered is correct and try again.");
+            }
+          } else {
+            alert("Operation canceled.");
+          }
+        } else {
+          alert("You must open up a new game save first!");
+        }
+      });
+    </script>
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-analytics.js";
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+    
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      const firebaseConfig = {
+        apiKey: "AIzaSyAW91Iuc-e9DpX-9lrgoN79Gy1KyrLU_lU",
+        authDomain: "jonny606-7c333.firebaseapp.com",
+        projectId: "jonny606-7c333",
+        storageBucket: "jonny606-7c333.firebasestorage.app",
+        messagingSenderId: "469502681652",
+        appId: "1:469502681652:web:15c7414cedcc84a07ba061",
+        measurementId: "G-R7GJYC0EZR"
+      };
+    
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+    </script>
+  </body>
+</html>
